@@ -16,15 +16,18 @@ function setLang(lang) {
 class LangSelector extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { lang: config['lang']};
+        this.state = { lang: config['lang'] };
         this.setLangCN = this.setLangCN.bind(this);
         this.setLangEN = this.setLangEN.bind(this);
+
+        //console.log(window.localStorage.getItem('lang'));
     }
 
     setLangCN() {
         console.log("lang is set to CN");
         config['lang'] = 'cn';
-        this.setState({lang: 'cn'});
+        this.setState({ lang: 'cn' });
+        localStorage.setItem('lang', 'cn');
 
         this.props.updateLang();
     }
@@ -32,9 +35,19 @@ class LangSelector extends React.Component {
     setLangEN() {
         console.log("lang is set to EN");
         config['lang'] = 'en';
-        this.setState({lang: 'en'});
-        
+        this.setState({ lang: 'en' });
+        localStorage.setItem('lang', 'en');
+
         this.props.updateLang();
+    }
+
+    componentDidMount() {
+        if (window.localStorage.getItem('lang') == 'cn') {
+
+            config['lang'] = 'cn';
+            this.setState({ lang: 'cn' });
+            this.props.updateLang();
+        }
     }
 
     render() {

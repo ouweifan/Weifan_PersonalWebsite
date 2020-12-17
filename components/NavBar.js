@@ -50,7 +50,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <Navbar bg="dark" variant="light" expand="lg">
+                <Navbar bg="dark" variant="dark" expand="lg">
                     <Link href="/" passHref>
                         <Navbar.Brand>{getText('name')}</Navbar.Brand>
                     </Link>
