@@ -1,26 +1,79 @@
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import React from 'react';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const divStyle = {
-    color: 'blue',
-    width: 100,
-};
+import Link from 'next/link'
 
-const NavBar = () => (
-    <div>
-        <Navbar bg="dark" variant="light" expand="lg">
-            <Navbar.Brand href="/">Weifan Ou</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="/about">About</Nav.Link>
-                    <Nav.Link href="/hobby">Hobby</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    </div>
-);
+import LangSelector from './LangSelector.js';
+
+import config from './config.js';
+
+const text = {
+    'name': {
+        'en': <div>Weifan Ou</div>,
+        'cn': <div>欧炜钒</div>,
+    },
+    'about': {
+        'en': 'About',
+        'cn': '关于',
+    },
+    'hobby': {
+        'en': 'Hobby',
+        'cn': '爱好',
+    }
+}
+
+function getText(textName) {
+    return (
+        <div>
+            {text[textName][config['lang']]}
+        </div>
+    )
+}
+
+
+class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { lang: config['lang'] };
+        this.updateLang = this.updateLang.bind(this)
+    }
+
+    updateLang() {
+        this.setState({ lang: config['lang'] });
+        this.props.updateLang();
+    }
+
+    render() {
+        return (
+            <div>
+                <Navbar bg="dark" variant="light" expand="lg">
+                    <Link href="/" passHref>
+                        <Navbar.Brand>{getText('name')}</Navbar.Brand>
+                    </Link>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Link href="/about" passHref>
+                                <Nav.Link>
+                                    {getText('about')}
+                                </Nav.Link>
+                            </Link>
+                            <Link href="/hobby" passHref>
+                                <Nav.Link>
+                                    {getText('hobby')}
+                                </Nav.Link>
+                            </Link>
+                        </Nav>
+                        <LangSelector updateLang={this.updateLang} />
+                    </Navbar.Collapse>
+                </Navbar>
+            </div >
+        );
+    }
+}
 
 export default NavBar;
