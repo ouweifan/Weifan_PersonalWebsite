@@ -23,7 +23,15 @@ const text = {
     'hobby': {
         'en': 'Hobby',
         'cn': '爱好',
-    }
+    },
+    'album': {
+        'en': 'Album',
+        'cn': '相册',
+    },
+    'projects': {
+        'en': 'Projects',
+        'cn': '项目'
+    },
 }
 
 function getText(textName) {
@@ -62,9 +70,19 @@ class NavBar extends React.Component {
                                     {getText('about')}
                                 </Nav.Link>
                             </Link>
+                            <Link href="/projects" passHref>
+                                <Nav.Link>
+                                    {getText('projects')}
+                                </Nav.Link>
+                            </Link>
                             <Link href="/hobby" passHref>
                                 <Nav.Link>
                                     {getText('hobby')}
+                                </Nav.Link>
+                            </Link>
+                            <Link href="/album" passHref>
+                                <Nav.Link>
+                                    {getText('album')}
                                 </Nav.Link>
                             </Link>
                         </Nav>

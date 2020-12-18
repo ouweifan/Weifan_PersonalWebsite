@@ -8,8 +8,8 @@ import config from '../components/config.js';
 
 const text = {
     'cting': {
-        'en': <div>This site is under construction. This dude is lazy. Don't even bother.</div>,
-        'cn': <div>此网站正在施工中。这个人很懒，屁都不会。</div>,
+        'en': <div>This site is under construction. Photo waterfall brrrrrrruuhhh</div>,
+        'cn': <div>此网站正在施工中。整个无限滚动的照片墙嗷~</div>,
     },
 }
 
@@ -21,7 +21,7 @@ function getText(textName) {
     )
 }
 
-class About extends React.Component {
+class Album extends React.Component {
     constructor(props) {
         super(props);
         this.state = { lang: config['lang'] };
@@ -35,11 +35,11 @@ class About extends React.Component {
 
     render() {
         return (
-            <LayoutGeneral pageTitle="About" updateLang={this.updateLang}>
+            <LayoutGeneral pageTitle="Album" updateLang={this.updateLang}>
                 {getText('cting')}
             </LayoutGeneral>
         )
     }
 }
 
-export default About;
+export default Album;

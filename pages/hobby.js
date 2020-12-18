@@ -8,8 +8,8 @@ import config from '../components/config.js';
 
 const text = {
     'cting': {
-        'en': <div>This site is under construction.</div>,
-        'cn': <div>此网站正在施工中</div>,
+        'en': <div>This site is under construction. Model Racing Gaming whatever.</div>,
+        'cn': <div>此网站正在施工中。整整模型赛车游戏好活。</div>,
     },
 }
 
