@@ -2,8 +2,10 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import NavBar from './NavBar.js';
+import BotBar from './BotBar.js';
 
 import config from './config.js';
+
 
 class LayoutGeneral extends React.Component {
     constructor(props) {
@@ -19,11 +21,14 @@ class LayoutGeneral extends React.Component {
 
     render() {
         return (
-            <div>
-                <NavBar updateLang={this.updateLang}/>
-                <div className="div_content">
+            <div className='layout'>
+                <div>
+                    <NavBar updateLang={this.updateLang} />
+                </div>
+                <div className="ContentDiv">
                     {this.props.children}
                 </div>
+                <BotBar />
             </div>
         );
     }
