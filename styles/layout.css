@@ -4,9 +4,9 @@
     --light-color-trans: #ffffff99;
 }
 
-.layout {
-    height: 100vh;
-    width:  100vw;
+.generalLayout {
+    height: fit-content;
+    width: 100%;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -14,12 +14,41 @@
     flex-direction: column;
 }
 
-.TopBarDiv {
+.homeLayout {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.NavBarDiv {
     height: fit-content;
 }
 
-.ContentDiv {
+.TopBarDiv {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 60px 0.3px rgba(0, 0, 0, 0.7);
+}
+
+.ContentDivGeneral {
+    height: 100%;
+    width: 100vw;
+    overflow-y: scroll;
+}
+
+.ContentDivHome {
     flex: 1;
+}
+
+.BotBarDivGeneral {
+    width: 100%;
+    text-align: center;
+    color: whilte;
 }
 
 .BotBarDiv {
@@ -31,25 +60,10 @@
     color: whilte;
 }
 
-.BotBarText {
-    margin: 0.5em 0 1em 0;
-    color: var(--light-color-trans);
-}
-
-.SocMedBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.SocMedBox {
-    margin: 0 1em 0 1em;
-    color: var(--light-color-trans);
-}
 
 .MainContent {
     height: 100%;
-    width:100%;
+    width: 100%;
     background-image: url('main_bkgnd.jpg');
     background-position: center;
     background-size: cover;
@@ -59,7 +73,7 @@
     position: absolute;
     left: 5%;
     bottom: 10%;
-    text-shadow: 10px 10px 5px  var(--dark-color);
+    text-shadow: 10px 10px 5px var(--dark-color);
 }
 
 .MainWelcomeText-DT {

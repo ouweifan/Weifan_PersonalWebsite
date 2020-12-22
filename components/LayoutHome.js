@@ -7,7 +7,7 @@ import BotBar from './BotBar.js';
 import config from './config.js';
 
 
-class LayoutGeneral extends React.Component {
+class LayoutHome extends React.Component {
     constructor(props) {
         super(props);
         this.state = { lang: config['lang'], pageTitle: props.pageTitle };
@@ -26,22 +26,22 @@ class LayoutGeneral extends React.Component {
                     <div className='TopBarDiv'>
                         <NavBar updateLang={this.updateLang} />
                     </div>
-                    <div className='ContentDivGeneral'>
+                    <div className="ContentDivHome">
                         {this.props.children}
-                        <div className='BotBarDivGeneral'>
-                            <BotBar theme='general'/>
-                        </div>
                     </div>
+                </div>
+                <div className='BotBarDiv'>
+                    <BotBar theme='home' />
                 </div>
             </div>
         );
     }
 }
 
-LayoutGeneral.propTypes = {
+LayoutHome.propTypes = {
     pageTitle: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired,
     updateLang: PropTypes.func.isRequired,
 }
 
-export default LayoutGeneral;
+export default LayoutHome;

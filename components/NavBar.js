@@ -57,8 +57,8 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <div className='TopBarDiv'>
-                <Navbar bg="dark" variant="dark" expand="lg">
+            <div className='NavBarDiv'>
+                <Navbar bg="light" variant="light" expand="lg">
                     <Link href="/" passHref>
                         <Navbar.Brand>{getText('name')}</Navbar.Brand>
                     </Link>

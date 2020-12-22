@@ -1,0 +1,42 @@
+:root {
+    --dark-color: #000000ff;
+    --light-color: #ffffffff;
+    --light-color-trans: #ffffff99;
+}
+
+.BotBarText_home {
+    padding: 0 0 1em 0;
+    color: var(--light-color-trans);
+}
+.BotBarText_general {
+    padding: 0 0 1em 0;
+    color: var(--dark-color);
+}
+
+.SocMedBar_home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.SocMedBar_general {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.SocMedButton {
+    background-color: transparent;
+    border: none;
+}
+.SocMedButton:focus {
+    outline:0;
+}
+
+.SocMedBox_home{
+    margin: 0.5em 1em 0.5em 1em;
+    color: var(--light-color-trans);
+}
+.SocMedBox_general{
+    margin: 0.5em 1em 0.5em 1em;
+    color: var(--dark-color);
+}

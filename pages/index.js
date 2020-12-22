@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Head from 'next/head'
-import LayoutGeneral from '../components/LayoutGeneral'
+import LayoutHome from '../components/LayoutHome'
 import styles from '../styles/Home.module.css'
 
 import { isMobileOnly } from 'react-device-detect';
@@ -22,8 +22,8 @@ const text = {
         'cn': <div>我是欧炜钒。</div>,
     },
     'welcome': {
-        'en': <div>It's great to have you here!</div>,
-        'cn': <div>欢迎来到我的角落！</div>,
+        'en': <div>It's great to have you here :D</div>,
+        'cn': <div>欢迎来到我的角落 :D</div>,
     },
 }
 
@@ -77,9 +77,9 @@ class Home extends React.Component {
 
     render() {
         return (
-            <LayoutGeneral pageTitle="Home" updateLang={this.updateLang}>
+            <LayoutHome pageTitle="Home" updateLang={this.updateLang}>
                 <HomeContent />
-            </LayoutGeneral>
+            </LayoutHome>
         )
     }
 }

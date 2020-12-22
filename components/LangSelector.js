@@ -53,8 +53,8 @@ class LangSelector extends React.Component {
     render() {
         return (
             <ButtonGroup>
-                <Button onClick={this.setLangCN} variant="outline-light" id="button_CN" disabled={this.state.lang == 'cn'}>中</Button>
-                <Button onClick={this.setLangEN} variant="outline-light" id="button_EN" disabled={this.state.lang == 'en'}>EN</Button>
+                <Button onClick={this.setLangCN} variant="outline-dark" id="button_CN" disabled={this.state.lang == 'cn'}>中</Button>
+                <Button onClick={this.setLangEN} variant="outline-dark" id="button_EN" disabled={this.state.lang == 'en'}>EN</Button>
             </ButtonGroup>
         );
     }

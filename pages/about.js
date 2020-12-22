@@ -11,6 +11,14 @@ const text = {
         'en': <div>This site is under construction. This dude is lazy. Don't even bother.</div>,
         'cn': <div>此网站正在施工中。这个人很懒，屁都不会。</div>,
     },
+    'name': {
+        'en': <div className="AboutNameEN">Weifan Ou</div>,
+        'cn': <div className="AboutNameCN">欧炜钒</div>,
+    },
+    'aka': {
+        'en': <div>a.k.a. Vanadium</div>,
+        'cn': <div>a.k.a. Vanadium</div>,
+    }
 }
 
 function getText(textName) {
@@ -22,6 +30,7 @@ function getText(textName) {
 }
 
 class About extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = { lang: config['lang'] };
@@ -34,9 +43,26 @@ class About extends React.Component {
 
 
     render() {
+
         return (
             <LayoutGeneral pageTitle="About" updateLang={this.updateLang}>
-                {getText('cting')}
+                <div className="AboutBackground"></div>
+                <div className="AboutContent">
+                    <div className="AboutBoxList">
+                        <div className="AboutIntroBox">
+                            <div className="AboutPictureBox">
+                                <div className="AboutPictureFrame">
+                                    <img className="AboutPicture" src="/myPhoto.png"></img>
+                                    {getText('name')}
+                                    {getText('aka')}
+                                </div>
+                            </div>
+                            <div className="AboutIntroContent"></div>
+                        </div>
+                        <div className="AboutEducationBox"></div>
+                        <div className="AboutExperienceBox"></div>
+                    </div>
+                </div>
             </LayoutGeneral>
         )
     }

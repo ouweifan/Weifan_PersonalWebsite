@@ -1,0 +1,71 @@
+.AboutBackground {
+    height: 30%;
+    background-image: url('about_bkgnd.jpg');
+    background-size: cover;
+    background-position: 0 70%;
+}
+
+.AboutContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    box-shadow: 0 -3px 60px 0.3px rgba(0, 0, 0, 0.7);
+}
+
+.AboutBoxList {
+    width: 60%;
+}
+
+.AboutIntroBox {
+    height: 200px;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+}
+
+.AboutPictureBox {
+    width: 25%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.AboutPictureFrame {
+    width: 65%;
+    position: relative;
+    left: 50%;
+    bottom: 60%;
+    transform: translateX(-50%);
+    background-color: transparent;
+}
+
+.AboutPicture {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+.AboutIntroContent {
+    width: 75%;
+    height: 100%;
+    background-color: aqua;
+}
+
+.AboutEducationBox {
+    height: 200px;
+    background-color: blueviolet;
+}
+
+.AboutExperienceBox {
+    height: 200px;
+    background-color: turquoise;
+}
+
+.AboutNameEN {
+    font-size: x-large;
+}
+
+.AboutNameCN {
+    font-size: x-large;
+}
